@@ -18,7 +18,7 @@ export const WrapperAnimation = styled.View`
   ${({ theme }) => css`
     width: 200px;
     height: 300px;
-    background-color: ${theme.colors.types.water};
+    background: ${theme.colors.types.water};
     border-radius: 100px;
     justify-content: center;
     align-items: center;
@@ -47,7 +47,7 @@ export const Footer = styled.View`
 export const Title = styled.Text`
   ${({ theme }) => css`
     font-size: 36px;
-    line-height: 48px;
+    /* line-height: 48px; */
     margin-top: 16px;
     color: ${theme.colors.text_white};
   `}
@@ -56,7 +56,7 @@ export const Title = styled.Text`
 export const SubTitle = styled.Text`
   ${({ theme }) => css`
     font-size: 16px;
-    line-height 22px;
+    /* line-height 22px; */
     margin-top: 16px;
     color: ${theme.colors.text_white};
   `}
