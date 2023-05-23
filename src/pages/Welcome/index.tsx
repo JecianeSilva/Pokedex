@@ -2,16 +2,23 @@ import React from 'react';
 import AnimatedLottieView from 'lottie-react-native';
 import pokemonAnimation from './pokemon.json';
 import * as S from './styles';
+import { Button } from '../../components/Button';
 
 export function Welcome() {
     return (
         <S.Container>
             <S.Content>
-                <AnimatedLottieView autoPlay source={pokemonAnimation} loop/>
-            </S.Content>
-            <S.Footer>
+                <S.WrapperAnimation>
+                    <S.WrapperImage>
+                        <AnimatedLottieView autoPlay source={pokemonAnimation} loop/>
+                    </S.WrapperImage>
+                </S.WrapperAnimation>
+
                 <S.Title>Bem Vindo</S.Title>
                 <S.SubTitle>Encontre todos os pokémons em um só lugar</S.SubTitle>
+            </S.Content>
+            <S.Footer>
+                <Button title='Text' />
             </S.Footer>
         </S.Container>
     )
