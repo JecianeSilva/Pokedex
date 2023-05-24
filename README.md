@@ -28,9 +28,9 @@
 ## Telas
 
 <div align="center">
-   <img alt="page-welcome" src="https://github.com/JecianeSilva/Pokedex/assets/43557425/6c1fcbf4-312d-40fb-ac28-29abba7c7867" height="600" />
-   <img alt="page-home" src="https://github.com/JecianeSilva/Pokedex/assets/43557425/4782c053-fd49-46ab-9e31-c63fdfb60f8e" height="600" />
-   <img alt="page-about" src="https://github.com/JecianeSilva/Pokedex/assets/43557425/620c5995-5ea9-4cfa-b79a-bb8f4e9f8e1e" height="600" />
+   <img alt="page-welcome" src="https://github.com/JecianeSilva/Pokedex/assets/43557425/6c1fcbf4-312d-40fb-ac28-29abba7c7867" height="500" />
+   <img alt="page-home" src="https://github.com/JecianeSilva/Pokedex/assets/43557425/4782c053-fd49-46ab-9e31-c63fdfb60f8e" height="500" />
+   <img alt="page-about" src="https://github.com/JecianeSilva/Pokedex/assets/43557425/620c5995-5ea9-4cfa-b79a-bb8f4e9f8e1e" height="500" />
 </div>
 
 ## Instalação
