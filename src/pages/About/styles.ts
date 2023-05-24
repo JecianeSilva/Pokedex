@@ -1,4 +1,6 @@
 import styled, {css} from "styled-components/native";
+import * as Progress from 'react-native-progress';
+
 import { TypeName } from '.';
 
 type TypeProps = {
@@ -112,6 +114,58 @@ export const Title = styled.Text<TypeProps>`
     padding: 20px;
     color: ${theme.colors.boxType[type]};
   `}
+`;
+
+export const StatusBar = styled.View`
+  width: 100%;
+  padding: 10px 20px;
+
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const Attributes = styled.Text`
+  ${({ theme }) => css`
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    width: 110px;
+    text-transform: capitalize;
+
+    color: ${theme.colors.text};
+  `}
+`;
+export const AttributesNumber = styled.Text`
+  ${({ theme }) => css`
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+    color: ${theme.colors.detail};
+    margin-left: 20px;
+    width: 30px;
+  `}
+`;
+
+export const ContentBar = styled.View`
+  margin-left: 20px;
+`;
+
+export const ProgressBar = styled(Progress.Bar)<TypeProps>``;
+
+export const Ability = styled.Text`
+    ${({ theme }) => css`
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        padding: 10px 20px;
+        text-transform: capitalize;
+
+        color: ${theme.colors.detail};
+    `}
 `;
 
 export const BackButton = styled.TouchableOpacity`

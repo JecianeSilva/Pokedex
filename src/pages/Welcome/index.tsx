@@ -20,8 +20,8 @@ export function Welcome() {
                     </S.WrapperImage>
                 </S.WrapperAnimation>
 
-                <S.Title>Bem Vindo</S.Title>
-                <S.SubTitle>Encontre todos os pokémons em um só lugar</S.SubTitle>
+                <S.Title>Bem Vindo ao Pokédex</S.Title>
+                <S.SubTitle>Encontre todos os pokémons em um só lugar.</S.SubTitle>
             </S.Content>
             <S.Footer>
                 <Button title='Entrar' onPress={handleNavigation}/>

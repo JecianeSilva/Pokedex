@@ -3,12 +3,14 @@ export default {
         background: '#FFFFFF',
         backgroundWater: '#58ABF6',
         text_white: '#FFFFFF',
-
+        
         types: {
           water: '#4A90DA',
         },
 
         light_text: 'rgba(23,23,27,0.6)',
+        text: '#050617',
+        detail: '#747476',
 
         backgroundCard: {
           grass: '#8BBE8A',

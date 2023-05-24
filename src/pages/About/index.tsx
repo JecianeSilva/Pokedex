@@ -18,13 +18,13 @@ type Attributes = {
     stat: {
         name: string;
     };
-} 
+}
 type Abilitys = {
     ability: {
         name: string;
     };
 }
-export type TypeName = 
+export type TypeName =
     | 'grass'
     | 'fire'
     | 'water'
@@ -34,7 +34,7 @@ export type TypeName =
     | 'flying'
     | 'eletric'
     | 'ground';
-  
+
 type PokemonTypes = {
     type: {
         name: TypeName
@@ -68,7 +68,7 @@ export function About() {
 
             const currentType = types[0]?.type.name as TypeName;
             const color = colors.backgroundCard[currentType];
-            
+
             setPokemon({
                 stats,
                 abilities,
@@ -77,7 +77,7 @@ export function About() {
                 types,
                 color,
             });
-            
+
             setLoad(false);
         } catch(err) {
             Alert.alert('Ops, ocorreu algum erro, tente mais tarde');
@@ -93,8 +93,8 @@ export function About() {
     function navigateBack() {
         navigation.goBack();
     }
-    
-    return ( 
+
+    return (
         load ? (
             <Text style={{margin: 200}}> Carregando ...</Text>
         ) : (
@@ -103,11 +103,11 @@ export function About() {
                     <S.BackButton onPress={navigateBack}>
                         <Feather name="chevron-left" size={24} color="#fff" />
                     </S.BackButton>
-    
+
                     <S.ContentImage>
                         <S.CircleImage source={circle} />
                         <FadeAnimation>
-                            <S.PokemonImage 
+                            <S.PokemonImage
                                 source={{uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}}
                             />
                         </FadeAnimation>
@@ -126,8 +126,31 @@ export function About() {
 
                     <S.DotsImage source={dots} />
                 </S.Header>
+
                 <S.Container>
-                    <S.Title type={pokemon.types[0].type.name}> Base States </S.Title>
+                    <S.Title type={pokemon.types[0].type.name}>Base States</S.Title>
+                    {pokemon.stats.map(attribute => (
+                        <S.StatusBar key={attribute.stat.name}>
+                            <S.Attributes>{attribute.stat.name}</S.Attributes>
+                            <S.AttributesNumber>{attribute.base_stat}</S.AttributesNumber>
+                            <S.ContentBar>
+                            <S.ProgressBar
+                                type={pokemon.types[0].type.name}
+                                borderWidth={0}
+                                progress={100}
+                                width={attribute.base_stat}
+                                color={pokemon.color}
+                            />
+                            </S.ContentBar>
+                        </S.StatusBar>
+                    ))}
+
+                    <S.Title type={pokemon.types[0].type.name}>Abilities</S.Title>
+                    {pokemon.abilities.map(abilityItem => (
+                        <S.Ability key={abilityItem.ability.name}>
+                            {abilityItem.ability.name}
+                        </S.Ability>
+                    ))}
                 </S.Container>
             </ScrollView>
         )

@@ -8,7 +8,8 @@ export const Container = styled.View`
 `;
 export const Content = styled.View`
   ${({ theme }) => css`
-    height: 70%;
+    height: 80%;
+    padding: 24px;
     align-items: center;
     justify-content: center;
   `}
@@ -38,16 +39,16 @@ export const Footer = styled.View`
     justify-content: center;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
-    height: 30%;
-    background-color: ${theme.colors.background};
-    padding: 20px;
+    padding: 24px;
   `}
 `;
 
 export const Title = styled.Text`
   ${({ theme }) => css`
     font-size: 36px;
-    /* line-height: 48px; */
+    line-height: 42px;
+    text-align: center;
+  
     margin-top: 16px;
     color: ${theme.colors.text_white};
   `}
@@ -56,7 +57,9 @@ export const Title = styled.Text`
 export const SubTitle = styled.Text`
   ${({ theme }) => css`
     font-size: 16px;
-    /* line-height 22px; */
+    line-height: 22px;
+    text-align: center;
+    
     margin-top: 16px;
     color: ${theme.colors.text_white};
   `}
