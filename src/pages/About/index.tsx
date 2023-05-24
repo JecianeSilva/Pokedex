@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useRoute, useNavigation } from '@react-navigation/native';
 import { Alert, ScrollView, Text } from 'react-native';
-import api from '../../service/api';
+import { useRoute, useNavigation } from '@react-navigation/native';
+import { Feather } from '@expo/vector-icons'
+
+import { useTheme } from 'styled-components';
+
+import circle from '../../assets/img/circle.png';
+import dots from '../../assets/img/dots.png';
 
 import * as S from './styles'
-import { useTheme } from 'styled-components';
-import circle from '../../assets/img/circle.png';
-import { Feather } from '@expo/vector-icons'
+
+import api from '../../service/api';
+import { FadeAnimation } from '../../components/FadeAnimation';
 
 type Attributes = {
     base_stat: number;
@@ -93,7 +98,7 @@ export function About() {
         load ? (
             <Text style={{margin: 200}}> Carregando ...</Text>
         ) : (
-            <ScrollView style={{ flex: 1 }}>
+            <ScrollView style={{ flex: 1, backgroundColor: '#FFFFFF'}}>
                 <S.Header type={pokemon.types[0].type.name}>
                     <S.BackButton onPress={navigateBack}>
                         <Feather name="chevron-left" size={24} color="#fff" />
@@ -101,11 +106,29 @@ export function About() {
     
                     <S.ContentImage>
                         <S.CircleImage source={circle} />
-                        <S.PokemonImage 
-                            source={{uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}}
-                        />
+                        <FadeAnimation>
+                            <S.PokemonImage 
+                                source={{uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}}
+                            />
+                        </FadeAnimation>
                     </S.ContentImage>
+                    <S.Content>
+                        <S.PokemonId>#{pokemon.id}</S.PokemonId>
+                        <S.PokemonName>{pokemon.name}</S.PokemonName>
+                        <S.PokemonTypeContainer>
+                            {pokemon.types.map(({ type }) => (
+                                <S.PokemonType type={type.name} key={type.name}>
+                                    <S.PokemonTypeText>{type.name}</S.PokemonTypeText>
+                                </S.PokemonType>
+                            ))}
+                        </S.PokemonTypeContainer>
+                    </S.Content>
+
+                    <S.DotsImage source={dots} />
                 </S.Header>
+                <S.Container>
+                    <S.Title type={pokemon.types[0].type.name}> Base States </S.Title>
+                </S.Container>
             </ScrollView>
         )
     );
